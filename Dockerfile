@@ -25,20 +25,15 @@ RUN pip install --no-cache-dir \
     plotly
 
 
-
-
-# Copy Jupyter-notebooks into image (for later copying into volume)
-COPY Jupyter-notebooks /workspace/Jupyter-notebooks
-
 # Copy entrypoint script
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Set working directory
-WORKDIR /workspace
+WORKDIR /programmierung/KoKI/Jupyter-notebooks
 
 # Expose Jupyter port
-EXPOSE 4321
+EXPOSE 8888
 
 # Start with entrypoint script
 ENTRYPOINT ["/entrypoint.sh"]

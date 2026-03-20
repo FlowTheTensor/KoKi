@@ -4,11 +4,10 @@ services:
     build: .
     container_name: koki-jupyter
     ports:
-      - "4321:4321"
+      - "4321:8888"
     volumes:
-      - C:/Programmierung:/programmierung
+      - C:/Programmierung/KoKI/Jupyter-notebooks:/programmierung/KoKI/Jupyter-notebooks
     environment:
       - JUPYTER_ENABLE_LAB=yes
-    restart: unless-stopped
 
 
