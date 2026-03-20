@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  jupyter:
+    build: .
+    container_name: koki-jupyter
+    ports:
+      - "4321:4321"
+    volumes:
+      - C:/Programmierung:/programmierung
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    restart: unless-stopped
+
+
