@@ -4,9 +4,9 @@ NOTEBOOK_DIR="/programmierung/KoKI/Jupyter-notebooks"
 REPO_DIR="/programmierung/KoKI"
 REPO_URL="https://github.com/FlowTheTensor/KoKi.git"
 
-if [ ! -d "$REPO_DIR/.git" ]; then
-	# Falls das Repo noch nicht existiert, klonen
-	git clone "$REPO_URL" "$REPO_DIR"
+# Nur kopieren, wenn der Ordner KoKI (das Repo) noch fehlt
+if [ ! -d "$REPO_DIR" ]; then
+	cp -r /workspace/KoKI "$REPO_DIR"
 fi
 
 # Starte Jupyter Lab
