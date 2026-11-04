@@ -1,0 +1,16 @@
+services:
+  code-server:
+    image: flowthetensor/jps-vscode:latest
+    container_name: jps-vscode
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - PASSWORD=VSCode
+    volumes:
+      - C:/Programmierung/VSCode:/home/coder/project
+      - vscode-user-data:/home/coder/.local/share/code-server
+
+volumes:
+  vscode-user-data:
+    name: vscode-user-data
